@@ -169,3 +169,154 @@ Esc → back to normal
 
 ---
 
+Got it 👍 — you’re inside **Vim editor during cherry-pick** and want to **paste your commit message**.
+
+Let’s do it step-by-step (simple & practical) 👇
+
+---
+
+# 🎯 Situation
+
+You ran:
+
+```bash
+git cherry-pick -m 1 M -e
+```
+
+👉 Vim opened
+
+---
+
+# 🔥 How to Paste Commit Message in Vim
+
+## ✅ Method 1: Using Keyboard Paste (Most Common)
+
+### Step 1: Enter insert mode
+
+```text
+Press: i
+```
+
+👉 Now you can type/paste
+
+---
+
+### Step 2: Paste
+
+Depending on your system:
+
+* **Mac** → `Cmd + V`
+* **Linux/Terminal** → `Ctrl + Shift + V`
+* **Right Click** → Paste
+
+---
+
+### Step 3: Save & exit
+
+```text
+Press: Esc
+Type: :wq
+Press Enter
+```
+
+---
+
+# ⚠️ Problem: Paste looks weird (auto indent / formatting issue)
+
+Sometimes Vim messes up pasted text like:
+
+```text
+    Add payment feature
+        - API
+            - validation
+```
+
+---
+
+## ✅ Fix (Important)
+
+Before pasting:
+
+```text
+:set paste
+```
+
+Then:
+
+```text
+i → paste your text
+```
+
+After pasting:
+
+```text
+:set nopaste
+```
+
+---
+
+# 🎯 Full Flow
+
+```text
+:set paste
+i
+(paste your message)
+Esc
+:set nopaste
+:wq
+```
+
+---
+
+# 🔥 Example
+
+You paste:
+
+```text
+Add payment feature to release
+
+- API integration
+- Validation added
+```
+
+---
+
+# 🧠 Mental Model
+
+```text
+Vim has 2 modes:
+Normal mode → commands
+Insert mode → typing/pasting
+```
+
+---
+
+# ⚡ Quick Shortcut (Fastest Way)
+
+```text
+i → paste → Esc → :wq
+```
+
+---
+
+# 🚀 Pro Tip (Avoid Vim if you hate it 😄)
+
+Set VS Code as default:
+
+```bash
+git config --global core.editor "code --wait"
+```
+
+---
+
+# ⚡ One-Line Memory
+
+```text
+i → paste → Esc → :wq
+```
+
+---
+
+
+
+
